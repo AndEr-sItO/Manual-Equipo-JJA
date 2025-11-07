@@ -16,6 +16,9 @@ const Navbar = () => {
 
   const navItems = [
     { name: "Introducción", href: "#introduccion" },
+    { name: "Normas", href: "#normas-seguridad" },
+    { name: "Guía", href: "#guia-mantenimiento" },
+    { name: "Herramientas", href: "#herramientas-mantenimiento" },
     { name: "Comunidad", href: "#comunidad" },
     { name: "Componentes", href: "#componentes" },
     { name: "Equipo", href: "#equipo" },
