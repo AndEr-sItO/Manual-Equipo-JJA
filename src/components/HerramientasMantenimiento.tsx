@@ -1,5 +1,6 @@
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import destornilladores from "@/assets/herramientas/destornilladores.jpg";
 import pulseraAntiestatica from "@/assets/herramientas/pulsera-antiestatica.jpg";
 import separadorTornillos from "@/assets/herramientas/separador-tornillos.jpg";
@@ -188,173 +189,188 @@ const HerramientasMantenimiento = () => {
           </h2>
         </div>
 
-        {/* Herramientas para el ensamblaje */}
-        <div className="mb-16">
-          <h3 className="text-3xl font-bold mb-3">Herramientas para el ensamblaje</h3>
-          <p className="text-lg text-muted-foreground mb-8">
-            <span className="font-semibold">Función:</span> Son utilizadas para ensamblar y desensamblar todas las partes del equipo de computo
-          </p>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {herramientasEnsamblaje.map((herramienta, index) => (
-              <Card key={index} className="card-hover hover-lift shadow-card overflow-hidden">
-                <div className="relative h-48">
-                  <img 
-                    src={herramienta.image} 
-                    alt={herramienta.name}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <CardHeader>
-                  <CardTitle className="text-xl">• {herramienta.name}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">{herramienta.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
+        <Tabs defaultValue="ensamblaje" className="w-full">
+          <TabsList className="grid w-full max-w-4xl mx-auto grid-cols-5 mb-8">
+            <TabsTrigger value="ensamblaje">Ensamblaje</TabsTrigger>
+            <TabsTrigger value="diagnostico">Diagnóstico</TabsTrigger>
+            <TabsTrigger value="preventivo">Preventivo</TabsTrigger>
+            <TabsTrigger value="correctivo">Correctivo</TabsTrigger>
+            <TabsTrigger value="quimicos">Químicos</TabsTrigger>
+          </TabsList>
 
-        {/* Herramientas de Diagnóstico */}
-        <div className="mb-16">
-          <h3 className="text-3xl font-bold mb-3">Herramientas de Diagnóstico</h3>
-          <p className="text-lg text-muted-foreground mb-8">
-            <span className="font-semibold">Función:</span> identificar el origen de fallas o problemas en computadoras y equipos tecnológicos. Permiten revisar, analizar y detectar si algún componente físico (hardware) o programa (software) está funcionando de manera incorrecta, ayudando a encontrar la causa del fallo antes de repararlo.
-          </p>
-          
-          <h4 className="text-2xl font-bold mb-6">Herramientas de Software</h4>
-          <div className="grid md:grid-cols-2 gap-6 mb-10">
-            {herramientasSoftware.map((herramienta, index) => (
-              <Card key={index} className="card-hover hover-lift shadow-card overflow-hidden">
-                <div className="relative h-48">
-                  <img 
-                    src={herramienta.image} 
-                    alt={herramienta.name}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <CardHeader>
-                  <CardTitle className="text-xl">• {herramienta.name}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground mb-3">{herramienta.description}</p>
-                  {herramienta.link && (
-                    <a 
-                      href={herramienta.link} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="text-primary hover:underline text-sm break-all"
-                    >
-                      Link: {herramienta.link}
-                    </a>
-                  )}
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+          <TabsContent value="ensamblaje">
+            <div className="mb-8">
+              <h3 className="text-3xl font-bold mb-3">Herramientas para el ensamblaje</h3>
+              <p className="text-lg text-muted-foreground mb-8">
+                <span className="font-semibold">Función:</span> Son utilizadas para ensamblar y desensamblar todas las partes del equipo de computo
+              </p>
+            </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {herramientasEnsamblaje.map((herramienta, index) => (
+                <Card key={index} className="card-hover hover-lift shadow-card overflow-hidden">
+                  <div className="relative h-48">
+                    <img 
+                      src={herramienta.image} 
+                      alt={herramienta.name}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <CardHeader>
+                    <CardTitle className="text-xl">• {herramienta.name}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground">{herramienta.description}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </TabsContent>
 
-          <h4 className="text-2xl font-bold mb-6">Herramientas Físicas de Diagnóstico</h4>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {herramientasFisicasDiagnostico.map((herramienta, index) => (
-              <Card key={index} className="card-hover hover-lift shadow-card overflow-hidden">
-                <div className="relative h-48">
-                  <img 
-                    src={herramienta.image} 
-                    alt={herramienta.name}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <CardHeader>
-                  <CardTitle className="text-lg">• {herramienta.name}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground text-sm">{herramienta.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
+          <TabsContent value="diagnostico">
+            <div className="mb-8">
+              <h3 className="text-3xl font-bold mb-3">Herramientas de Diagnóstico</h3>
+              <p className="text-lg text-muted-foreground mb-8">
+                <span className="font-semibold">Función:</span> identificar el origen de fallas o problemas en computadoras y equipos tecnológicos. Permiten revisar, analizar y detectar si algún componente físico (hardware) o programa (software) está funcionando de manera incorrecta, ayudando a encontrar la causa del fallo antes de repararlo.
+              </p>
+              
+              <h4 className="text-2xl font-bold mb-6">Herramientas de Software</h4>
+              <div className="grid md:grid-cols-2 gap-6 mb-10">
+                {herramientasSoftware.map((herramienta, index) => (
+                  <Card key={index} className="card-hover hover-lift shadow-card overflow-hidden">
+                    <div className="relative h-48">
+                      <img 
+                        src={herramienta.image} 
+                        alt={herramienta.name}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <CardHeader>
+                      <CardTitle className="text-xl">• {herramienta.name}</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-muted-foreground mb-3">{herramienta.description}</p>
+                      {herramienta.link && (
+                        <a 
+                          href={herramienta.link} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="text-primary hover:underline text-sm break-all"
+                        >
+                          Link: {herramienta.link}
+                        </a>
+                      )}
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
 
-        {/* Herramientas para el mantenimiento preventivo */}
-        <div className="mb-16">
-          <h3 className="text-3xl font-bold mb-3">Herramientas para el mantenimiento preventivo</h3>
-          <p className="text-lg text-muted-foreground mb-8">
-            <span className="font-semibold">Función:</span> Son aquellas que se utilizan con el fin de prevenir el surgimiento de averías en los artefactos
-          </p>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {herramientasPreventivo.map((herramienta, index) => (
-              <Card key={index} className="card-hover hover-lift shadow-card overflow-hidden">
-                <div className="relative h-48">
-                  <img 
-                    src={herramienta.image} 
-                    alt={herramienta.name}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <CardHeader>
-                  <CardTitle className="text-xl">• {herramienta.name}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">{herramienta.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
+              <h4 className="text-2xl font-bold mb-6">Herramientas Físicas de Diagnóstico</h4>
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                {herramientasFisicasDiagnostico.map((herramienta, index) => (
+                  <Card key={index} className="card-hover hover-lift shadow-card overflow-hidden">
+                    <div className="relative h-48">
+                      <img 
+                        src={herramienta.image} 
+                        alt={herramienta.name}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <CardHeader>
+                      <CardTitle className="text-lg">• {herramienta.name}</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-muted-foreground text-sm">{herramienta.description}</p>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </div>
+          </TabsContent>
 
-        {/* Herramientas para el Mantenimiento Correctivo */}
-        <div className="mb-16">
-          <h3 className="text-3xl font-bold mb-3">Herramientas para el Mantenimiento Correctivo</h3>
-          <p className="text-lg text-muted-foreground mb-8">
-            <span className="font-semibold">Función:</span> Son aquellas que tienen que tienen la capacidad de reparar alguna parte del equipo de cómputo, que este fallando en el momento o algún defecto presente.
-          </p>
-          <div className="grid md:grid-cols-3 gap-6">
-            {herramientasCorrectivo.map((herramienta, index) => (
-              <Card key={index} className="card-hover hover-lift shadow-card overflow-hidden">
-                <div className="relative h-48">
-                  <img 
-                    src={herramienta.image} 
-                    alt={herramienta.name}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <CardHeader>
-                  <CardTitle className="text-xl">• {herramienta.name}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">{herramienta.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
+          <TabsContent value="preventivo">
+            <div className="mb-8">
+              <h3 className="text-3xl font-bold mb-3">Herramientas para el mantenimiento preventivo</h3>
+              <p className="text-lg text-muted-foreground mb-8">
+                <span className="font-semibold">Función:</span> Son aquellas que se utilizan con el fin de prevenir el surgimiento de averías en los artefactos
+              </p>
+            </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {herramientasPreventivo.map((herramienta, index) => (
+                <Card key={index} className="card-hover hover-lift shadow-card overflow-hidden">
+                  <div className="relative h-48">
+                    <img 
+                      src={herramienta.image} 
+                      alt={herramienta.name}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <CardHeader>
+                    <CardTitle className="text-xl">• {herramienta.name}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground">{herramienta.description}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </TabsContent>
 
-        {/* Productos Químicos */}
-        <div>
-          <h3 className="text-3xl font-bold mb-3">Productos Químicos</h3>
-          <p className="text-lg text-muted-foreground mb-8">
-            <span className="font-semibold">Función:</span> Son los diferentes químicos que ayudan a complementar el mantenimiento necesario para el equipo.
-          </p>
-          <div className="grid md:grid-cols-3 gap-6">
-            {productosQuimicos.map((producto, index) => (
-              <Card key={index} className="card-hover hover-lift shadow-card overflow-hidden">
-                <div className="relative h-48">
-                  <img 
-                    src={producto.image} 
-                    alt={producto.name}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <CardHeader>
-                  <CardTitle className="text-xl">• {producto.name}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">{producto.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
+          <TabsContent value="correctivo">
+            <div className="mb-8">
+              <h3 className="text-3xl font-bold mb-3">Herramientas para el Mantenimiento Correctivo</h3>
+              <p className="text-lg text-muted-foreground mb-8">
+                <span className="font-semibold">Función:</span> Son aquellas que tienen que tienen la capacidad de reparar alguna parte del equipo de cómputo, que este fallando en el momento o algún defecto presente.
+              </p>
+            </div>
+            <div className="grid md:grid-cols-3 gap-6">
+              {herramientasCorrectivo.map((herramienta, index) => (
+                <Card key={index} className="card-hover hover-lift shadow-card overflow-hidden">
+                  <div className="relative h-48">
+                    <img 
+                      src={herramienta.image} 
+                      alt={herramienta.name}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <CardHeader>
+                    <CardTitle className="text-xl">• {herramienta.name}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground">{herramienta.description}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </TabsContent>
+
+          <TabsContent value="quimicos">
+            <div className="mb-8">
+              <h3 className="text-3xl font-bold mb-3">Productos Químicos</h3>
+              <p className="text-lg text-muted-foreground mb-8">
+                <span className="font-semibold">Función:</span> Son los diferentes químicos que ayudan a complementar el mantenimiento necesario para el equipo.
+              </p>
+            </div>
+            <div className="grid md:grid-cols-3 gap-6">
+              {productosQuimicos.map((producto, index) => (
+                <Card key={index} className="card-hover hover-lift shadow-card overflow-hidden">
+                  <div className="relative h-48">
+                    <img 
+                      src={producto.image} 
+                      alt={producto.name}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <CardHeader>
+                    <CardTitle className="text-xl">• {producto.name}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground">{producto.description}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </TabsContent>
+        </Tabs>
       </div>
     </section>
   );

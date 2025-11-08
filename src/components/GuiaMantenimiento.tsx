@@ -1,5 +1,6 @@
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import inspeccionVisual from "@/assets/mantenimiento/desconectar-equipo.jpg";
 import limpiezaExterna from "@/assets/mantenimiento/pulsera-antiestatica-uso.jpg";
 import limpiezaInterna from "@/assets/mantenimiento/limpieza-interna.jpg";
@@ -83,115 +84,120 @@ const GuiaMantenimiento = () => {
           </h2>
         </div>
 
-        {/* Mantenimiento Preventivo */}
-        <div className="mb-20">
-          <div className="mb-8">
-            <h3 className="text-3xl font-bold mb-4">Mantenimiento Preventivo para Computadoras</h3>
-            
-            <div className="grid md:grid-cols-2 gap-6 mb-6">
-              <Card className="bg-accent/50">
-                <CardHeader>
-                  <CardTitle className="text-xl">✅ Objetivo</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">
-                    Mantener el equipo limpio, organizado y funcionando correctamente para evitar fallas futuras.
-                  </p>
-                </CardContent>
-              </Card>
+        <Tabs defaultValue="preventivo" className="w-full">
+          <TabsList className="grid w-full max-w-md mx-auto grid-cols-2 mb-8">
+            <TabsTrigger value="preventivo">Mantenimiento Preventivo</TabsTrigger>
+            <TabsTrigger value="correctivo">Mantenimiento Correctivo</TabsTrigger>
+          </TabsList>
+
+          <TabsContent value="preventivo">
+            <div className="mb-8">
+              <h3 className="text-3xl font-bold mb-4">Mantenimiento Preventivo para Computadoras</h3>
               
-              <Card className="bg-accent/50">
-                <CardHeader>
-                  <CardTitle className="text-xl">📅 Frecuencia Recomendada</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">
-                    Realizar cada 3 a 6 meses.
-                  </p>
-                </CardContent>
-              </Card>
+              <div className="grid md:grid-cols-2 gap-6 mb-6">
+                <Card className="bg-accent/50">
+                  <CardHeader>
+                    <CardTitle className="text-xl">✅ Objetivo</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground">
+                      Mantener el equipo limpio, organizado y funcionando correctamente para evitar fallas futuras.
+                    </p>
+                  </CardContent>
+                </Card>
+                
+                <Card className="bg-accent/50">
+                  <CardHeader>
+                    <CardTitle className="text-xl">📅 Frecuencia Recomendada</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground">
+                      Realizar cada 3 a 6 meses.
+                    </p>
+                  </CardContent>
+                </Card>
+              </div>
+
+              <h4 className="text-2xl font-bold mb-6">🔧 Pasos del Mantenimiento Preventivo</h4>
             </div>
 
-            <h4 className="text-2xl font-bold mb-6">🔧 Pasos del Mantenimiento Preventivo</h4>
-          </div>
-
-          <div className="grid gap-6">
-            {pasosPreventivo.map((paso, index) => (
-              <Card key={index} className="card-hover hover-lift shadow-card overflow-hidden">
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div className="p-6 flex flex-col justify-center">
-                    <h4 className="text-xl font-bold mb-3">{index + 1}. {paso.title}</h4>
-                    <p className="text-muted-foreground whitespace-pre-line">{paso.description}</p>
+            <div className="grid gap-6">
+              {pasosPreventivo.map((paso, index) => (
+                <Card key={index} className="card-hover hover-lift shadow-card overflow-hidden">
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div className="p-6 flex flex-col justify-center">
+                      <h4 className="text-xl font-bold mb-3">{index + 1}. {paso.title}</h4>
+                      <p className="text-muted-foreground whitespace-pre-line">{paso.description}</p>
+                    </div>
+                    <div className="relative h-64 md:h-auto">
+                      <img 
+                        src={paso.image} 
+                        alt={paso.title}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
                   </div>
-                  <div className="relative h-64 md:h-auto">
-                    <img 
-                      src={paso.image} 
-                      alt={paso.title}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                </div>
-              </Card>
-            ))}
-          </div>
-        </div>
+                </Card>
+              ))}
+            </div>
+          </TabsContent>
 
-        {/* Mantenimiento Correctivo */}
-        <div>
-          <div className="mb-8">
-            <h3 className="text-3xl font-bold mb-4">Mantenimiento Correctivo para Computadoras</h3>
-            
-            <div className="grid md:grid-cols-2 gap-6 mb-6">
-              <Card className="bg-accent/50">
-                <CardHeader>
-                  <CardTitle className="text-xl">🎯 Objetivo</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">
-                    Solucionar fallas o problemas que impiden el funcionamiento normal del equipo.
-                  </p>
-                </CardContent>
-              </Card>
+          <TabsContent value="correctivo">
+            <div className="mb-8">
+              <h3 className="text-3xl font-bold mb-4">Mantenimiento Correctivo para Computadoras</h3>
               
-              <Card className="bg-accent/50">
-                <CardHeader>
-                  <CardTitle className="text-xl">📍 Se realiza cuando el equipo presenta fallas, como:</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <ul className="list-disc list-inside text-muted-foreground space-y-1">
-                    <li>No enciende</li>
-                    <li>Se reinicia solo</li>
-                    <li>Va muy lento</li>
-                    <li>Pantalla sin señal</li>
-                    <li>No reconoce dispositivos</li>
-                  </ul>
-                </CardContent>
-              </Card>
+              <div className="grid md:grid-cols-2 gap-6 mb-6">
+                <Card className="bg-accent/50">
+                  <CardHeader>
+                    <CardTitle className="text-xl">🎯 Objetivo</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground">
+                      Solucionar fallas o problemas que impiden el funcionamiento normal del equipo.
+                    </p>
+                  </CardContent>
+                </Card>
+                
+                <Card className="bg-accent/50">
+                  <CardHeader>
+                    <CardTitle className="text-xl">📍 Se realiza cuando el equipo presenta fallas, como:</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <ul className="list-disc list-inside text-muted-foreground space-y-1">
+                      <li>No enciende</li>
+                      <li>Se reinicia solo</li>
+                      <li>Va muy lento</li>
+                      <li>Pantalla sin señal</li>
+                      <li>No reconoce dispositivos</li>
+                    </ul>
+                  </CardContent>
+                </Card>
+              </div>
+
+              <h4 className="text-2xl font-bold mb-6">🔍 Pasos del Mantenimiento Correctivo</h4>
             </div>
 
-            <h4 className="text-2xl font-bold mb-6">🔍 Pasos del Mantenimiento Correctivo</h4>
-          </div>
-
-          <div className="grid gap-6">
-            {pasosCorrectivo.map((paso, index) => (
-              <Card key={index} className="card-hover hover-lift shadow-card overflow-hidden">
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div className="p-6 flex flex-col justify-center">
-                    <h4 className="text-xl font-bold mb-3">{index + 1}. {paso.title}</h4>
-                    <p className="text-muted-foreground whitespace-pre-line">{paso.description}</p>
+            <div className="grid gap-6">
+              {pasosCorrectivo.map((paso, index) => (
+                <Card key={index} className="card-hover hover-lift shadow-card overflow-hidden">
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div className="p-6 flex flex-col justify-center">
+                      <h4 className="text-xl font-bold mb-3">{index + 1}. {paso.title}</h4>
+                      <p className="text-muted-foreground whitespace-pre-line">{paso.description}</p>
+                    </div>
+                    <div className="relative h-64 md:h-auto">
+                      <img 
+                        src={paso.image} 
+                        alt={paso.title}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
                   </div>
-                  <div className="relative h-64 md:h-auto">
-                    <img 
-                      src={paso.image} 
-                      alt={paso.title}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                </div>
-              </Card>
-            ))}
-          </div>
-        </div>
+                </Card>
+              ))}
+            </div>
+          </TabsContent>
+        </Tabs>
       </div>
     </section>
   );
