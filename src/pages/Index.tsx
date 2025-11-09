@@ -5,7 +5,8 @@ import NormasSeguridad from "@/components/NormasSeguridad";
 import GuiaMantenimiento from "@/components/GuiaMantenimiento";
 import HerramientasMantenimiento from "@/components/HerramientasMantenimiento";
 import Comunidad from "@/components/Comunidad";
-import Componentes from "@/components/Componentes";
+import InventarioComponentes from "@/components/InventarioComponentes";
+import FuncionComponentes from "@/components/FuncionComponentes";
 import Equipo from "@/components/Equipo";
 import Footer from "@/components/Footer";
 
@@ -19,7 +20,8 @@ const Index = () => {
       <GuiaMantenimiento />
       <HerramientasMantenimiento />
       <Comunidad />
-      <Componentes />
+      <InventarioComponentes />
+      <FuncionComponentes />
       <Equipo />
       <Footer />
     </div>

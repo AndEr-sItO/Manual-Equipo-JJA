@@ -20,7 +20,8 @@ const Navbar = () => {
     { name: "Guía", href: "#guia-mantenimiento" },
     { name: "Herramientas", href: "#herramientas-mantenimiento" },
     { name: "Comunidad", href: "#comunidad" },
-    { name: "Componentes", href: "#componentes" },
+    { name: "Inventario", href: "#inventario" },
+    { name: "Función", href: "#funcion-componentes" },
     { name: "Equipo", href: "#equipo" },
   ];
 
