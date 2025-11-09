@@ -15,36 +15,31 @@ import {
 const InventarioComponentes = () => {
   const [searchTerm, setSearchTerm] = useState("");
 
-  const hardwareInternos = [
-    { nombre: "GABINETE", marca: "Lenovo", modelo: "A54", ref: "LKDNBRY", velocidad: "N.A", capacidad: "N.A", estado: "B" },
-    { nombre: "MEMORIA RAM 1", marca: "SAMSUNG", modelo: "N.A", ref: "N.A", velocidad: "133Mhz", capacidad: "N.A", estado: "B" },
-    { nombre: "MEMORIA RAM 2", marca: "N.A", modelo: "N.A", ref: "N.A", velocidad: "N.A", capacidad: "N.A", estado: "N.A" },
-    { nombre: "DISCO DURO 1", marca: "Seagate", modelo: "3160815AS", ref: "5RA4JPNV", velocidad: "N.A", capacidad: "149,1GB", estado: "B" },
-    { nombre: "DISCO DURO 2", marca: "N.A", modelo: "N.A", ref: "N.A", velocidad: "N.A", capacidad: "N.A", estado: "N.A" },
-    { nombre: "TARJETA MADRE", marca: "Lenovo", modelo: "8705A54", ref: "N.A", velocidad: "N.A", capacidad: "N.A", estado: "B" },
-    { nombre: "UNIDAD DE CD/DVD", marca: "Toshiba (TSST)", modelo: "TS-H4a2C", ref: "41A9629", velocidad: "48X", capacidad: "N.A", estado: "M" },
-    { nombre: "FUENTE DE PODER", marca: "LITEON", modelo: "Genérica", ref: "N.A", velocidad: "N.A", capacidad: "225W", estado: "B" },
-    { nombre: "PROCESADOR", marca: "Intel", modelo: "Pentium", ref: "N.A", velocidad: "1.60 Ghz", capacidad: "N.A", estado: "B" },
-    { nombre: "PUERTOS USB", marca: "Intel", modelo: "ICH7", ref: "N.A", velocidad: "N.A", capacidad: "N.A", estado: "B" },
-    { nombre: "PUERTOS PCI", marca: "Intel", modelo: "ICH7", ref: "N.A", velocidad: "N.A", capacidad: "N.A", estado: "B" },
-  ];
-
-  const perifericos = [
-    { nombre: "MONITOR", marca: "Lenovo", modelo: "9227-AD1", ref: "V1V5637", estado: "R" },
-    { nombre: "TECLADO", marca: "Lenovo", modelo: "KU-0225", ref: "0248795", estado: "B" },
-    { nombre: "MOUSE", marca: "Lenovo", modelo: "MO28U02", ref: "44C0788018", estado: "B" },
-    { nombre: "IMPRESORA", marca: "N.A", modelo: "N.A", ref: "N.A", estado: "N.A" },
-    { nombre: "ESCÁNER", marca: "N.A", modelo: "N.A", ref: "N.A", estado: "N.A" },
-    { nombre: "OTROS", marca: "Lenovo", modelo: "LXB-1203A", ref: "070410", estado: "B" },
-  ];
-
-  const software = [
-    { nombre: "SISTEMA OPERATIVO", programa: "Linux Lite", version: "3.8", licencia: "Libre", actualizaciones: "N.A" },
-    { nombre: "SISTEMA OFIMÁTICO", programa: "LibreOffice", version: "5.1.6.2", licencia: "Libre", actualizaciones: "N.A" },
-    { nombre: "COMPRESOR", programa: "Gzip", version: "1.6", licencia: "Libre", actualizaciones: "N.A" },
-    { nombre: "ADOBE READER", programa: "PDF Viewer", version: "3.18.2", licencia: "Libre", actualizaciones: "N.A" },
-    { nombre: "NAVEGADOR", programa: "Firefox", version: "88.0", licencia: "Libre", actualizaciones: "N.A" },
-    { nombre: "REPRODUCTOR", programa: "VLC", version: "2.2.2", licencia: "Libre", actualizaciones: "N.A" },
+  const inventario = [
+    // Hardware Interno
+    { id: "hw-01", nombre: "GABINETE", categoria: "Hardware Interno", descripcion: "Lenovo A54 | Ref: LKDNBRY", estado: "B" },
+    { id: "hw-02", nombre: "MEMORIA RAM 1", categoria: "Hardware Interno", descripcion: "SAMSUNG | 133Mhz", estado: "B" },
+    { id: "hw-03", nombre: "DISCO DURO 1", categoria: "Hardware Interno", descripcion: "Seagate 3160815AS | Ref: 5RA4JPNV | Capacidad: 149,1GB", estado: "B" },
+    { id: "hw-04", nombre: "TARJETA MADRE", categoria: "Hardware Interno", descripcion: "Lenovo 8705A54", estado: "B" },
+    { id: "hw-05", nombre: "UNIDAD DE CD/DVD", categoria: "Hardware Interno", descripcion: "Toshiba (TSST) TS-H4a2C | Ref: 41A9629 | Velocidad: 48X", estado: "M" },
+    { id: "hw-06", nombre: "FUENTE DE PODER", categoria: "Hardware Interno", descripcion: "LITEON Genérica | Capacidad: 225W", estado: "B" },
+    { id: "hw-07", nombre: "PROCESADOR", categoria: "Hardware Interno", descripcion: "Intel Pentium | Velocidad: 1.60 Ghz", estado: "B" },
+    { id: "hw-08", nombre: "PUERTOS USB", categoria: "Hardware Interno", descripcion: "Intel ICH7", estado: "B" },
+    { id: "hw-09", nombre: "PUERTOS PCI", categoria: "Hardware Interno", descripcion: "Intel ICH7", estado: "B" },
+    
+    // Periféricos
+    { id: "per-01", nombre: "MONITOR", categoria: "Periférico", descripcion: "Lenovo 9227-AD1 | Ref: V1V5637", estado: "R" },
+    { id: "per-02", nombre: "TECLADO", categoria: "Periférico", descripcion: "Lenovo KU-0225 | Ref: 0248795", estado: "B" },
+    { id: "per-03", nombre: "MOUSE", categoria: "Periférico", descripcion: "Lenovo MO28U02 | Ref: 44C0788018", estado: "B" },
+    { id: "per-04", nombre: "OTROS", categoria: "Periférico", descripcion: "Lenovo LXB-1203A | Ref: 070410", estado: "B" },
+    
+    // Software
+    { id: "sw-01", nombre: "SISTEMA OPERATIVO", categoria: "Software", descripcion: "Linux Lite 3.8 | Licencia: Libre", estado: "B" },
+    { id: "sw-02", nombre: "SISTEMA OFIMÁTICO", categoria: "Software", descripcion: "LibreOffice 5.1.6.2 | Licencia: Libre", estado: "B" },
+    { id: "sw-03", nombre: "COMPRESOR", categoria: "Software", descripcion: "Gzip 1.6 | Licencia: Libre", estado: "B" },
+    { id: "sw-04", nombre: "ADOBE READER", categoria: "Software", descripcion: "PDF Viewer 3.18.2 | Licencia: Libre", estado: "B" },
+    { id: "sw-05", nombre: "NAVEGADOR", categoria: "Software", descripcion: "Firefox 88.0 | Licencia: Libre", estado: "B" },
+    { id: "sw-06", nombre: "REPRODUCTOR", categoria: "Software", descripcion: "VLC 2.2.2 | Licencia: Libre", estado: "B" },
   ];
 
   const getEstadoBadge = (estado: string) => {
@@ -102,101 +97,31 @@ const InventarioComponentes = () => {
           </div>
         </div>
 
-        {/* Hardware Internos */}
-        <Card className="mb-8 shadow-card">
-          <CardHeader>
-            <CardTitle className="text-2xl">Hardware (Componentes Internos)</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="overflow-x-auto">
-              <Table>
-                <TableHeader>
-                  <TableRow>
-                    <TableHead>Componente</TableHead>
-                    <TableHead>Marca</TableHead>
-                    <TableHead>Modelo</TableHead>
-                    <TableHead>Ref/Código/Serial</TableHead>
-                    <TableHead>Velocidad</TableHead>
-                    <TableHead>Capacidad</TableHead>
-                    <TableHead>Estado</TableHead>
-                  </TableRow>
-                </TableHeader>
-                <TableBody>
-                  {filterItems(hardwareInternos).map((item, index) => (
-                    <TableRow key={index}>
-                      <TableCell className="font-medium">{item.nombre}</TableCell>
-                      <TableCell>{item.marca}</TableCell>
-                      <TableCell>{item.modelo}</TableCell>
-                      <TableCell>{item.ref}</TableCell>
-                      <TableCell>{item.velocidad}</TableCell>
-                      <TableCell>{item.capacidad}</TableCell>
-                      <TableCell>{getEstadoBadge(item.estado)}</TableCell>
-                    </TableRow>
-                  ))}
-                </TableBody>
-              </Table>
-            </div>
-          </CardContent>
-        </Card>
-
-        {/* Periféricos */}
-        <Card className="mb-8 shadow-card">
-          <CardHeader>
-            <CardTitle className="text-2xl">Hardware (Periféricos)</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="overflow-x-auto">
-              <Table>
-                <TableHeader>
-                  <TableRow>
-                    <TableHead>Periférico</TableHead>
-                    <TableHead>Marca</TableHead>
-                    <TableHead>Modelo</TableHead>
-                    <TableHead>Ref/Código/Serial</TableHead>
-                    <TableHead>Estado</TableHead>
-                  </TableRow>
-                </TableHeader>
-                <TableBody>
-                  {filterItems(perifericos).map((item, index) => (
-                    <TableRow key={index}>
-                      <TableCell className="font-medium">{item.nombre}</TableCell>
-                      <TableCell>{item.marca}</TableCell>
-                      <TableCell>{item.modelo}</TableCell>
-                      <TableCell>{item.ref}</TableCell>
-                      <TableCell>{getEstadoBadge(item.estado)}</TableCell>
-                    </TableRow>
-                  ))}
-                </TableBody>
-              </Table>
-            </div>
-          </CardContent>
-        </Card>
-
-        {/* Software */}
+        {/* Inventario Completo */}
         <Card className="shadow-card">
           <CardHeader>
-            <CardTitle className="text-2xl">Software</CardTitle>
+            <CardTitle className="text-2xl">Inventario Completo</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="overflow-x-auto">
               <Table>
                 <TableHeader>
                   <TableRow>
-                    <TableHead>Tipo</TableHead>
-                    <TableHead>Programa</TableHead>
-                    <TableHead>Versión</TableHead>
-                    <TableHead>Licencia</TableHead>
-                    <TableHead>Actualizaciones</TableHead>
+                    <TableHead>Estado</TableHead>
+                    <TableHead>ID</TableHead>
+                    <TableHead>Nombre</TableHead>
+                    <TableHead>Categoría</TableHead>
+                    <TableHead>Descripción</TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>
-                  {filterItems(software).map((item, index) => (
+                  {filterItems(inventario).map((item, index) => (
                     <TableRow key={index}>
+                      <TableCell>{getEstadoBadge(item.estado)}</TableCell>
+                      <TableCell className="font-mono text-sm">{item.id}</TableCell>
                       <TableCell className="font-medium">{item.nombre}</TableCell>
-                      <TableCell>{item.programa}</TableCell>
-                      <TableCell>{item.version}</TableCell>
-                      <TableCell>{item.licencia}</TableCell>
-                      <TableCell>{item.actualizaciones}</TableCell>
+                      <TableCell>{item.categoria}</TableCell>
+                      <TableCell className="text-sm text-muted-foreground">{item.descripcion}</TableCell>
                     </TableRow>
                   ))}
                 </TableBody>

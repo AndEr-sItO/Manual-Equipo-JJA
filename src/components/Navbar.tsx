@@ -22,6 +22,7 @@ const Navbar = () => {
     { name: "Comunidad", href: "#comunidad" },
     { name: "Inventario", href: "#inventario" },
     { name: "Función", href: "#funcion-componentes" },
+    { name: "Glosario", href: "#glosario" },
     { name: "Equipo", href: "#equipo" },
   ];
 

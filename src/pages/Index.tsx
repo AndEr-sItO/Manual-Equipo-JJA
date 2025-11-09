@@ -7,6 +7,7 @@ import HerramientasMantenimiento from "@/components/HerramientasMantenimiento";
 import Comunidad from "@/components/Comunidad";
 import InventarioComponentes from "@/components/InventarioComponentes";
 import FuncionComponentes from "@/components/FuncionComponentes";
+import Glosario from "@/components/Glosario";
 import Equipo from "@/components/Equipo";
 import Footer from "@/components/Footer";
 
@@ -22,6 +23,7 @@ const Index = () => {
       <Comunidad />
       <InventarioComponentes />
       <FuncionComponentes />
+      <Glosario />
       <Equipo />
       <Footer />
     </div>

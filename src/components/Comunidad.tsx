@@ -17,7 +17,7 @@ const Comunidad = () => {
 
         {/* Logo y Bienvenida */}
         <div className="flex justify-center mb-12">
-          <img src={logoVicenteSojo} alt="Logo UEN Vicente Emilio Sojo" className="max-w-md w-full rounded-lg shadow-card" />
+          <img src={logoVicenteSojo} alt="Logo UEN Vicente Emilio Sojo" className="max-w-sm w-full" />
         </div>
 
         {/* Descripción */}
@@ -77,33 +77,6 @@ const Comunidad = () => {
           </Card>
         </div>
 
-        {/* Estructura Organizativa */}
-        <Card className="shadow-card">
-          <CardHeader>
-            <CardTitle className="text-3xl">ESTRUCTURA ORGANIZATIVA</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <img src={estructuraImg} alt="Estructura Organizativa" className="w-full rounded-lg mb-6" />
-            <div className="space-y-3">
-              <div className="flex justify-between border-b pb-2">
-                <span className="font-semibold">Directora:</span>
-                <span className="text-muted-foreground">María teresa Díaz</span>
-              </div>
-              <div className="flex justify-between border-b pb-2">
-                <span className="font-semibold">Coordinación y evaluación de estudio:</span>
-                <span className="text-muted-foreground">Profa. Fabiola Jagrutta / Profa. Marieng Herrera</span>
-              </div>
-              <div className="flex justify-between border-b pb-2">
-                <span className="font-semibold">Coordinación No2:</span>
-                <span className="text-muted-foreground">Profa. Ana Pérez</span>
-              </div>
-              <div className="flex justify-between border-b pb-2">
-                <span className="font-semibold">Coordinación No3:</span>
-                <span className="text-muted-foreground">Profa. Yuleidy romero</span>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </section>
   );
