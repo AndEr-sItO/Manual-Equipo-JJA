@@ -102,11 +102,11 @@ const FuncionComponentes = () => {
 
   const ComponentCard = ({ componente }: { componente: any }) => (
     <Card className="shadow-card card-hover overflow-hidden">
-      <div className="relative h-48 overflow-hidden">
+      <div className="relative h-48 overflow-hidden rounded-t-lg">
         <img 
           src={componente.imagen} 
           alt={componente.nombre} 
-          className="w-full h-full object-contain bg-muted"
+          className="w-full h-full object-cover bg-muted"
         />
       </div>
       <CardHeader className="pb-2">

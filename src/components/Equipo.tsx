@@ -1,4 +1,4 @@
-import { Mail, Briefcase } from "lucide-react";
+import { Mail } from "lucide-react";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import jhoanderImg from "@/assets/equipo/jhoander.jpg";
@@ -46,21 +46,17 @@ const Equipo = () => {
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
           {teamMembers.map((member, index) => (
             <Card key={index} className="card-hover hover-lift shadow-card text-center overflow-hidden">
-              <div className="h-48 w-full overflow-hidden bg-muted">
-                <img 
-                  src={member.image} 
-                  alt={member.name}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <CardHeader className="pb-3 pt-4">
-                <h3 className="text-lg font-bold mb-1">{member.name}</h3>
-                <div className="flex items-center justify-center gap-1.5">
-                  <Briefcase className="h-3.5 w-3.5 text-primary" />
-                  <Badge variant="secondary" className="text-xs">
-                    {member.role}
-                  </Badge>
+              <div className="flex justify-center pt-6 pb-4">
+                <div className="w-40 h-40 rounded-full overflow-hidden bg-muted">
+                  <img 
+                    src={member.image} 
+                    alt={member.name}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
+              </div>
+              <CardHeader className="pb-3 pt-0">
+                <h3 className="text-lg font-bold">{member.name}</h3>
               </CardHeader>
               <CardContent className="pt-0 pb-4">
                 <p className="text-xs text-muted-foreground mb-3 leading-relaxed">

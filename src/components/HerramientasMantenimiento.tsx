@@ -215,7 +215,7 @@ const HerramientasMantenimiento = () => {
                     <img 
                       src={herramienta.image} 
                       alt={herramienta.name}
-                      className="w-full h-full object-contain bg-muted"
+                      className="w-full h-full object-cover bg-muted rounded-t-lg"
                     />
                   </div>
                   <CardHeader className="pb-2">
@@ -244,7 +244,7 @@ const HerramientasMantenimiento = () => {
                       <img 
                         src={herramienta.image} 
                         alt={herramienta.name}
-                        className="w-full h-full object-contain bg-muted"
+                        className="w-full h-full object-cover bg-muted rounded-t-lg"
                       />
                     </div>
                     <CardHeader className="pb-2">
@@ -275,7 +275,7 @@ const HerramientasMantenimiento = () => {
                       <img 
                         src={herramienta.image} 
                         alt={herramienta.name}
-                        className="w-full h-full object-contain bg-muted"
+                        className="w-full h-full object-cover bg-muted rounded-t-lg"
                       />
                     </div>
                     <CardHeader className="pb-2">
@@ -304,7 +304,7 @@ const HerramientasMantenimiento = () => {
                     <img 
                       src={herramienta.image} 
                       alt={herramienta.name}
-                      className="w-full h-full object-contain bg-muted"
+                      className="w-full h-full object-cover bg-muted rounded-t-lg"
                     />
                   </div>
                   <CardHeader className="pb-2">
@@ -332,7 +332,7 @@ const HerramientasMantenimiento = () => {
                     <img 
                       src={herramienta.image} 
                       alt={herramienta.name}
-                      className="w-full h-full object-contain bg-muted"
+                      className="w-full h-full object-cover bg-muted rounded-t-lg"
                     />
                   </div>
                   <CardHeader className="pb-2">
@@ -360,7 +360,7 @@ const HerramientasMantenimiento = () => {
                     <img 
                       src={producto.image} 
                       alt={producto.name}
-                      className="w-full h-full object-contain bg-muted"
+                      className="w-full h-full object-cover bg-muted rounded-t-lg"
                     />
                   </div>
                   <CardHeader className="pb-2">

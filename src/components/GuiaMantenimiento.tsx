@@ -132,7 +132,7 @@ const GuiaMantenimiento = () => {
                         <img
                           src={paso.image}
                           alt={paso.title}
-                          className="w-full h-full object-contain bg-muted"
+                          className="w-full h-full object-cover bg-muted rounded-t-lg"
                         />
                         <div className="absolute top-2 left-2 bg-primary text-primary-foreground w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm">
                           {paso.numero}
@@ -180,7 +180,7 @@ const GuiaMantenimiento = () => {
                         <img
                           src={paso.image}
                           alt={paso.title}
-                          className="w-full h-full object-contain bg-muted"
+                          className="w-full h-full object-cover bg-muted rounded-t-lg"
                         />
                         <div className="absolute top-2 left-2 bg-primary text-primary-foreground w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm">
                           {paso.numero}

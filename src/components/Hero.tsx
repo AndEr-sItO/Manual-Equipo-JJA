@@ -15,7 +15,7 @@ const Hero = () => {
       <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-5 animate-fade-in">
           💻 Manual Técnico
-          <span className="block text-primary mt-2">de Mantenimiento</span>
+          <span className="block text-primary mt-2">Interactivo</span>
         </h1>
         <p className="text-lg sm:text-xl text-muted-foreground mb-6 animate-fade-in">
           Guía completa e interactiva sobre mantenimiento de sistemas informáticos
