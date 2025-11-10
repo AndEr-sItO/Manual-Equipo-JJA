@@ -102,32 +102,32 @@ const FuncionComponentes = () => {
 
   const ComponentCard = ({ componente }: { componente: any }) => (
     <Card className="shadow-card card-hover overflow-hidden">
-      <div className="relative h-64 overflow-hidden">
+      <div className="relative h-48 overflow-hidden">
         <img 
           src={componente.imagen} 
           alt={componente.nombre} 
-          className="w-full h-full object-cover"
+          className="w-full h-full object-contain bg-muted"
         />
       </div>
-      <CardHeader>
-        <CardTitle className="text-2xl">{componente.nombre}</CardTitle>
+      <CardHeader className="pb-2">
+        <CardTitle className="text-xl">{componente.nombre}</CardTitle>
       </CardHeader>
-      <CardContent className="space-y-4">
+      <CardContent className="space-y-3 pb-4">
         <div>
-          <h4 className="font-semibold mb-2 text-lg">Descripción:</h4>
-          <p className="text-muted-foreground leading-relaxed">
+          <h4 className="font-semibold mb-1.5 text-sm">Descripción:</h4>
+          <p className="text-muted-foreground leading-relaxed text-xs">
             {componente.descripcion}
           </p>
         </div>
         <div>
-          <h4 className="font-semibold mb-3 text-lg flex items-center gap-2">
-            <AlertCircle className="h-5 w-5 text-destructive" />
+          <h4 className="font-semibold mb-2 text-sm flex items-center gap-1.5">
+            <AlertCircle className="h-4 w-4 text-destructive" />
             Fallas Comunes:
           </h4>
-          <ul className="space-y-2">
+          <ul className="space-y-1.5">
             {componente.fallas.map((falla: string, index: number) => (
-              <li key={index} className="flex gap-2 text-muted-foreground">
-                <span className="text-destructive mt-1">•</span>
+              <li key={index} className="flex gap-2 text-muted-foreground text-xs">
+                <span className="text-destructive mt-0.5">•</span>
                 <span>{falla}</span>
               </li>
             ))}
@@ -138,30 +138,30 @@ const FuncionComponentes = () => {
   );
 
   return (
-    <section id="funcion-componentes" className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/30">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <Badge className="mb-4 text-sm">Componentes</Badge>
-          <h2 className="text-4xl sm:text-5xl font-bold mb-4">
+    <section id="funcion-componentes" className="py-12 px-4 sm:px-6 lg:px-8 bg-muted/30">
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center mb-10">
+          <Badge className="mb-3 text-xs">⚙️ Componentes</Badge>
+          <h2 className="text-3xl sm:text-4xl font-bold mb-3">
             Función de los Componentes
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-base text-muted-foreground max-w-2xl mx-auto">
             Conoce la función, descripción y fallas comunes de cada componente de la computadora
           </p>
         </div>
 
         <Tabs defaultValue="internos" className="w-full">
-          <TabsList className="grid w-full max-w-md mx-auto grid-cols-2 mb-12">
-            <TabsTrigger value="internos" className="text-base">
+          <TabsList className="grid w-full max-w-md mx-auto grid-cols-2 mb-8">
+            <TabsTrigger value="internos" className="text-sm">
               Componentes Internos
             </TabsTrigger>
-            <TabsTrigger value="externos" className="text-base">
+            <TabsTrigger value="externos" className="text-sm">
               Componentes Externos
             </TabsTrigger>
           </TabsList>
 
           <TabsContent value="internos">
-            <div className="grid md:grid-cols-2 gap-8">
+            <div className="grid md:grid-cols-2 gap-6">
               {componentesInternos.map((componente, index) => (
                 <ComponentCard key={index} componente={componente} />
               ))}
@@ -169,7 +169,7 @@ const FuncionComponentes = () => {
           </TabsContent>
 
           <TabsContent value="externos">
-            <div className="grid md:grid-cols-2 gap-8">
+            <div className="grid md:grid-cols-2 gap-6">
               {componentesExternos.map((componente, index) => (
                 <ComponentCard key={index} componente={componente} />
               ))}

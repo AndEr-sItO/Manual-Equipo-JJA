@@ -99,127 +99,130 @@ const HerramientasMantenimiento = () => {
       image: cableTester
     },
     {
-      name: "Probador de toma corriente",
-      description: "Se conecta al enchufe y enciende luces para indicar si hay un problema eléctrico básico. Fácil de interpretar.",
+      name: "Probador de tomacorrientes (Outlet Tester)",
+      description: "Dispositivo pequeño que se conecta a un enchufe para verificar si el tomacorriente tiene corriente y si la conexión a tierra es correcta.",
       image: outletTester
     },
     {
-      name: "Linterna pequeña",
-      description: "Para ayudar a revisar conexiones, puertos y verificar visualmente si un cable o pieza está correctamente conectada.",
+      name: "Linterna o lámpara LED portátil",
+      description: "Útil para observar con claridad el interior del gabinete, especialmente en lugares oscuros o con poca luz. Algunos técnicos usan linternas con banda para cabeza.",
       image: linterna
+    },
+    {
+      name: "Brocha de cerdas suaves",
+      description: "Para limpiar componentes internos y acumular polvo para luego ser eliminado con aire comprimido.",
+      image: brocha
+    },
+    {
+      name: "Multímetro",
+      description: "Instrumento que permite medir magnitudes eléctricas como voltajes, corriente y resistencias. Se utiliza para identificar fallos en componentes electrónicos.",
+      image: multimetro
     }
   ];
 
   const herramientasPreventivo = [
     {
-      name: "Brocha",
-      description: "Son usadas por lo regular para la limpieza interna del pc.",
-      image: brocha
-    },
-    {
-      name: "Multímetro",
-      description: "Cumple múltiples funciones en el mantenimiento de una PC al permitir medir voltaje, corriente y resistencia, lo cual es crucial para diagnosticar y prevenir problemas eléctricos.",
-      image: multimetro
-    },
-    {
-      name: "Sopladora",
-      description: "Sirve para eliminar el polvo de manera segura y eficiente de componentes internos, como ventiladores, disipadores y ranuras de expansión",
+      name: "Sopladora de aire comprimido",
+      description: "Se utiliza para expulsar polvo y partículas de lugares difíciles de alcanzar, como ventiladores, disipadores y ranuras.",
       image: sopladora
     },
     {
-      name: "Trapo antiestático o franela blanca",
-      description: "Se utiliza para limpiar las superficies sin rayarlas, y liberándolas de residuos",
+      name: "Trapo antiestático (microfibra)",
+      description: "Absorbe el polvo sin rayar o generar estática en los componentes.",
       image: trapoAntiestatico
     },
     {
-      name: "Cepillo suave",
-      description: "Para sacar y quitar mugre que sea de facil acceso en el computo.",
+      name: "Cepillo de cerdas suaves",
+      description: "Ideal para aflojar el polvo en componentes delicados antes de aplicar aire comprimido.",
       image: cepilloSuave
     },
     {
-      name: "Borrador nata",
-      description: "Utilizado para limpiar la memoria RAM.",
+      name: "Borrador de nata",
+      description: "Se usa para limpiar contactos de tarjetas, memorias RAM o conectores sucios.",
       image: borradorNata
     }
   ];
 
   const herramientasCorrectivo = [
     {
-      name: "Removedor de soldadura",
-      description: "Sirve para retirar la soldadura de estaño fundida de una placa base, para permitir la extracción y sustitución de componentes electrónicos dañados o defectuosos.",
+      name: "Removedor de soldadura (malla o succionador)",
+      description: "Sirve para quitar soldadura de componentes dañados o desoldados de una placa.",
       image: removedorSoldadura
     },
     {
       name: "Pela cables",
-      description: "Sirve para retirar de manera precisa y segura la cubierta protectora (aislamiento) de los cables eléctricos sin dañar los conductores internos de cobre.",
+      description: "Herramienta para pelar y cortar cables de forma precisa sin dañar el conductor interno.",
       image: pelaCables
     },
     {
-      name: "Cautín",
-      description: "Sirve para realizar reparaciones a nivel de componente electrónico mediante la aplicación de soldadura.",
+      name: "Cautín o soldador eléctrico",
+      description: "Sirve para soldar componentes electrónicos o reparar circuitos dañados.",
       image: cautin
     }
   ];
 
   const productosQuimicos = [
     {
-      name: "Alcohol Isopropilico",
-      description: "Sire como un solvente de limpieza seguro y eficaz para componentes electrónicos, debido a que se evapora rápidamente sin dejar residuos.",
+      name: "Alcohol isopropílico (al 90% o superior)",
+      description: "Limpia contactos eléctricos, disipadores y componentes sin dejar residuos. Se evapora rápidamente y no conduce electricidad.",
       image: alcoholIsopropilico
     },
     {
-      name: "Estaño para soldar",
-      description: "es fundamental en la reparación de PC, ya que sirve para crear conexiones eléctricas estables y uniones mecánicas seguras entre los componentes electrónicos y la placa base.",
+      name: "Estaño (para soldar)",
+      description: "Material que, al calentarse con el cautín, une componentes electrónicos a las placas.",
       image: estano
     },
     {
       name: "Pasta térmica",
-      description: "Sirve para mejorar la transferencia de calor entre el procesador (CPU, y también la GPU) y su disipador o sistema de refrigeración.",
+      description: "Se aplica entre el procesador y el disipador para mejorar la transferencia de calor y evitar sobrecalentamiento.",
       image: pastaTermica
     }
   ];
 
   return (
-    <section id="herramientas-mantenimiento" className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/30">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <Badge className="mb-4 text-sm">Equipamiento</Badge>
-          <h2 className="text-4xl sm:text-5xl font-bold mb-4">
-            Herramientas para mantenimiento
+    <section id="herramientas" className="py-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center mb-10">
+          <Badge className="mb-3 text-xs">🛠️ Herramientas</Badge>
+          <h2 className="text-3xl sm:text-4xl font-bold mb-3">
+            Herramientas para el Mantenimiento
           </h2>
+          <p className="text-base text-muted-foreground max-w-2xl mx-auto">
+            Descubre las herramientas esenciales para el mantenimiento de computadoras
+          </p>
         </div>
 
         <Tabs defaultValue="ensamblaje" className="w-full">
-          <TabsList className="grid w-full max-w-4xl mx-auto grid-cols-5 mb-8">
-            <TabsTrigger value="ensamblaje">Ensamblaje</TabsTrigger>
-            <TabsTrigger value="diagnostico">Diagnóstico</TabsTrigger>
-            <TabsTrigger value="preventivo">Preventivo</TabsTrigger>
-            <TabsTrigger value="correctivo">Correctivo</TabsTrigger>
-            <TabsTrigger value="quimicos">Químicos</TabsTrigger>
+          <TabsList className="grid w-full grid-cols-2 lg:grid-cols-5 mb-8 h-auto">
+            <TabsTrigger value="ensamblaje" className="text-xs sm:text-sm">Ensamblaje</TabsTrigger>
+            <TabsTrigger value="diagnostico" className="text-xs sm:text-sm">Diagnóstico</TabsTrigger>
+            <TabsTrigger value="preventivo" className="text-xs sm:text-sm">Preventivo</TabsTrigger>
+            <TabsTrigger value="correctivo" className="text-xs sm:text-sm">Correctivo</TabsTrigger>
+            <TabsTrigger value="quimicos" className="text-xs sm:text-sm">Químicos</TabsTrigger>
           </TabsList>
 
           <TabsContent value="ensamblaje">
-            <div className="mb-8">
-              <h3 className="text-3xl font-bold mb-3">Herramientas para el ensamblaje</h3>
-              <p className="text-lg text-muted-foreground mb-8">
+            <div className="mb-6">
+              <h3 className="text-xl font-bold mb-2">Herramientas para el ensamblaje</h3>
+              <p className="text-sm text-muted-foreground mb-6">
                 <span className="font-semibold">Función:</span> Son utilizadas para ensamblar y desensamblar todas las partes del equipo de computo
               </p>
             </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
               {herramientasEnsamblaje.map((herramienta, index) => (
                 <Card key={index} className="card-hover hover-lift shadow-card overflow-hidden">
-                  <div className="relative h-48">
+                  <div className="relative h-36">
                     <img 
                       src={herramienta.image} 
                       alt={herramienta.name}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-contain bg-muted"
                     />
                   </div>
-                  <CardHeader>
-                    <CardTitle className="text-xl">• {herramienta.name}</CardTitle>
+                  <CardHeader className="pb-2">
+                    <CardTitle className="text-base">• {herramienta.name}</CardTitle>
                   </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground">{herramienta.description}</p>
+                  <CardContent className="pt-0 pb-3">
+                    <p className="text-muted-foreground text-xs leading-relaxed">{herramienta.description}</p>
                   </CardContent>
                 </Card>
               ))}
@@ -227,34 +230,34 @@ const HerramientasMantenimiento = () => {
           </TabsContent>
 
           <TabsContent value="diagnostico">
-            <div className="mb-8">
-              <h3 className="text-3xl font-bold mb-3">Herramientas de Diagnóstico</h3>
-              <p className="text-lg text-muted-foreground mb-8">
-                <span className="font-semibold">Función:</span> identificar el origen de fallas o problemas en computadoras y equipos tecnológicos. Permiten revisar, analizar y detectar si algún componente físico (hardware) o programa (software) está funcionando de manera incorrecta, ayudando a encontrar la causa del fallo antes de repararlo.
+            <div className="mb-6">
+              <h3 className="text-xl font-bold mb-2">Herramientas de Diagnóstico</h3>
+              <p className="text-sm text-muted-foreground mb-6">
+                <span className="font-semibold">Función:</span> identificar el origen de fallas o problemas en computadoras y equipos tecnológicos.
               </p>
               
-              <h4 className="text-2xl font-bold mb-6">Herramientas de Software</h4>
-              <div className="grid md:grid-cols-2 gap-6 mb-10">
+              <h4 className="text-lg font-bold mb-4">💻 Software</h4>
+              <div className="grid md:grid-cols-2 gap-4 mb-8">
                 {herramientasSoftware.map((herramienta, index) => (
                   <Card key={index} className="card-hover hover-lift shadow-card overflow-hidden">
-                    <div className="relative h-48">
+                    <div className="relative h-36">
                       <img 
                         src={herramienta.image} 
                         alt={herramienta.name}
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-contain bg-muted"
                       />
                     </div>
-                    <CardHeader>
-                      <CardTitle className="text-xl">• {herramienta.name}</CardTitle>
+                    <CardHeader className="pb-2">
+                      <CardTitle className="text-base">• {herramienta.name}</CardTitle>
                     </CardHeader>
-                    <CardContent>
-                      <p className="text-muted-foreground mb-3">{herramienta.description}</p>
+                    <CardContent className="pt-0 pb-3">
+                      <p className="text-muted-foreground mb-2 text-xs leading-relaxed">{herramienta.description}</p>
                       {herramienta.link && (
                         <a 
                           href={herramienta.link} 
                           target="_blank" 
                           rel="noopener noreferrer"
-                          className="text-primary hover:underline text-sm break-all"
+                          className="text-primary hover:underline text-[10px] break-all"
                         >
                           Link: {herramienta.link}
                         </a>
@@ -264,22 +267,22 @@ const HerramientasMantenimiento = () => {
                 ))}
               </div>
 
-              <h4 className="text-2xl font-bold mb-6">Herramientas Físicas de Diagnóstico</h4>
-              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <h4 className="text-lg font-bold mb-4">🔧 Físicas</h4>
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {herramientasFisicasDiagnostico.map((herramienta, index) => (
                   <Card key={index} className="card-hover hover-lift shadow-card overflow-hidden">
-                    <div className="relative h-48">
+                    <div className="relative h-32">
                       <img 
                         src={herramienta.image} 
                         alt={herramienta.name}
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-contain bg-muted"
                       />
                     </div>
-                    <CardHeader>
-                      <CardTitle className="text-lg">• {herramienta.name}</CardTitle>
+                    <CardHeader className="pb-2">
+                      <CardTitle className="text-sm">• {herramienta.name}</CardTitle>
                     </CardHeader>
-                    <CardContent>
-                      <p className="text-muted-foreground text-sm">{herramienta.description}</p>
+                    <CardContent className="pt-0 pb-3">
+                      <p className="text-muted-foreground text-xs leading-relaxed">{herramienta.description}</p>
                     </CardContent>
                   </Card>
                 ))}
@@ -288,27 +291,27 @@ const HerramientasMantenimiento = () => {
           </TabsContent>
 
           <TabsContent value="preventivo">
-            <div className="mb-8">
-              <h3 className="text-3xl font-bold mb-3">Herramientas para el mantenimiento preventivo</h3>
-              <p className="text-lg text-muted-foreground mb-8">
+            <div className="mb-6">
+              <h3 className="text-xl font-bold mb-2">Herramientas para el mantenimiento preventivo</h3>
+              <p className="text-sm text-muted-foreground mb-6">
                 <span className="font-semibold">Función:</span> Son aquellas que se utilizan con el fin de prevenir el surgimiento de averías en los artefactos
               </p>
             </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
               {herramientasPreventivo.map((herramienta, index) => (
                 <Card key={index} className="card-hover hover-lift shadow-card overflow-hidden">
-                  <div className="relative h-48">
+                  <div className="relative h-36">
                     <img 
                       src={herramienta.image} 
                       alt={herramienta.name}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-contain bg-muted"
                     />
                   </div>
-                  <CardHeader>
-                    <CardTitle className="text-xl">• {herramienta.name}</CardTitle>
+                  <CardHeader className="pb-2">
+                    <CardTitle className="text-base">• {herramienta.name}</CardTitle>
                   </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground">{herramienta.description}</p>
+                  <CardContent className="pt-0 pb-3">
+                    <p className="text-muted-foreground text-xs leading-relaxed">{herramienta.description}</p>
                   </CardContent>
                 </Card>
               ))}
@@ -316,27 +319,27 @@ const HerramientasMantenimiento = () => {
           </TabsContent>
 
           <TabsContent value="correctivo">
-            <div className="mb-8">
-              <h3 className="text-3xl font-bold mb-3">Herramientas para el Mantenimiento Correctivo</h3>
-              <p className="text-lg text-muted-foreground mb-8">
-                <span className="font-semibold">Función:</span> Son aquellas que tienen que tienen la capacidad de reparar alguna parte del equipo de cómputo, que este fallando en el momento o algún defecto presente.
+            <div className="mb-6">
+              <h3 className="text-xl font-bold mb-2">Herramientas para el Mantenimiento Correctivo</h3>
+              <p className="text-sm text-muted-foreground mb-6">
+                <span className="font-semibold">Función:</span> Son aquellas que tienen la capacidad de reparar alguna parte del equipo de cómputo.
               </p>
             </div>
-            <div className="grid md:grid-cols-3 gap-6">
+            <div className="grid md:grid-cols-3 gap-4">
               {herramientasCorrectivo.map((herramienta, index) => (
                 <Card key={index} className="card-hover hover-lift shadow-card overflow-hidden">
-                  <div className="relative h-48">
+                  <div className="relative h-36">
                     <img 
                       src={herramienta.image} 
                       alt={herramienta.name}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-contain bg-muted"
                     />
                   </div>
-                  <CardHeader>
-                    <CardTitle className="text-xl">• {herramienta.name}</CardTitle>
+                  <CardHeader className="pb-2">
+                    <CardTitle className="text-base">• {herramienta.name}</CardTitle>
                   </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground">{herramienta.description}</p>
+                  <CardContent className="pt-0 pb-3">
+                    <p className="text-muted-foreground text-xs leading-relaxed">{herramienta.description}</p>
                   </CardContent>
                 </Card>
               ))}
@@ -344,27 +347,27 @@ const HerramientasMantenimiento = () => {
           </TabsContent>
 
           <TabsContent value="quimicos">
-            <div className="mb-8">
-              <h3 className="text-3xl font-bold mb-3">Productos Químicos</h3>
-              <p className="text-lg text-muted-foreground mb-8">
+            <div className="mb-6">
+              <h3 className="text-xl font-bold mb-2">Productos Químicos</h3>
+              <p className="text-sm text-muted-foreground mb-6">
                 <span className="font-semibold">Función:</span> Son los diferentes químicos que ayudan a complementar el mantenimiento necesario para el equipo.
               </p>
             </div>
-            <div className="grid md:grid-cols-3 gap-6">
+            <div className="grid md:grid-cols-3 gap-4">
               {productosQuimicos.map((producto, index) => (
                 <Card key={index} className="card-hover hover-lift shadow-card overflow-hidden">
-                  <div className="relative h-48">
+                  <div className="relative h-36">
                     <img 
                       src={producto.image} 
                       alt={producto.name}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-contain bg-muted"
                     />
                   </div>
-                  <CardHeader>
-                    <CardTitle className="text-xl">• {producto.name}</CardTitle>
+                  <CardHeader className="pb-2">
+                    <CardTitle className="text-base">• {producto.name}</CardTitle>
                   </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground">{producto.description}</p>
+                  <CardContent className="pt-0 pb-3">
+                    <p className="text-muted-foreground text-xs leading-relaxed">{producto.description}</p>
                   </CardContent>
                 </Card>
               ))}

@@ -87,56 +87,60 @@ const GuiaMantenimiento = () => {
   ];
 
   return (
-    <section id="guia-mantenimiento" className="py-20 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <Badge className="mb-4 text-sm">Procedimientos</Badge>
-          <h2 className="text-4xl sm:text-5xl font-bold mb-4">
+    <section id="guia-mantenimiento" className="py-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center mb-10">
+          <Badge className="mb-3 text-xs">🔧 Procedimientos</Badge>
+          <h2 className="text-3xl sm:text-4xl font-bold mb-3">
             Guía para el Mantenimiento
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-base text-muted-foreground max-w-2xl mx-auto">
             Procedimientos paso a paso para mantener tu equipo en óptimas condiciones
           </p>
         </div>
 
         <Tabs defaultValue="preventivo" className="w-full">
-          <TabsList className="grid w-full max-w-md mx-auto grid-cols-2 mb-12">
-            <TabsTrigger value="preventivo">Mantenimiento Preventivo</TabsTrigger>
-            <TabsTrigger value="correctivo">Mantenimiento Correctivo</TabsTrigger>
+          <TabsList className="grid w-full max-w-md mx-auto grid-cols-2 mb-8">
+            <TabsTrigger value="preventivo" className="text-sm">Preventivo</TabsTrigger>
+            <TabsTrigger value="correctivo" className="text-sm">Correctivo</TabsTrigger>
           </TabsList>
 
           <TabsContent value="preventivo">
-            <Card className="mb-8 shadow-card">
-              <CardContent className="pt-6">
-                <div className="mb-6">
-                  <h3 className="text-2xl font-bold mb-4">✅ Objetivo</h3>
-                  <p className="text-muted-foreground text-lg">
+            <Card className="mb-6 shadow-card">
+              <CardContent className="pt-5 pb-5">
+                <div className="mb-5">
+                  <h3 className="text-lg font-bold mb-2 flex items-center gap-2">
+                    ✅ Objetivo
+                  </h3>
+                  <p className="text-muted-foreground text-sm">
                     Mantener el equipo limpio, organizado y funcionando correctamente para evitar fallas futuras.
                   </p>
                 </div>
-                <div className="mb-8">
-                  <h3 className="text-2xl font-bold mb-4">📅 Frecuencia Recomendada</h3>
-                  <p className="text-muted-foreground text-lg">
+                <div className="mb-5">
+                  <h3 className="text-lg font-bold mb-2 flex items-center gap-2">
+                    📅 Frecuencia
+                  </h3>
+                  <p className="text-muted-foreground text-sm">
                     Realizar cada 3 a 6 meses.
                   </p>
                 </div>
-                <h3 className="text-2xl font-bold mb-6">🔧 Pasos del Mantenimiento Preventivo</h3>
-                <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                <h3 className="text-lg font-bold mb-4">🔧 Pasos del Mantenimiento</h3>
+                <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
                   {pasosPreventivo.map((paso, index) => (
                     <Card key={index} className="overflow-hidden card-hover">
-                      <div className="relative h-48">
+                      <div className="relative h-36">
                         <img
                           src={paso.image}
                           alt={paso.title}
-                          className="w-full h-full object-cover"
+                          className="w-full h-full object-contain bg-muted"
                         />
-                        <div className="absolute top-4 left-4 bg-primary text-primary-foreground w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg">
+                        <div className="absolute top-2 left-2 bg-primary text-primary-foreground w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm">
                           {paso.numero}
                         </div>
                       </div>
-                      <CardContent className="p-4">
-                        <h4 className="font-semibold text-lg mb-2">{paso.title}</h4>
-                        <p className="text-sm text-muted-foreground">{paso.description}</p>
+                      <CardContent className="p-3">
+                        <h4 className="font-semibold text-sm mb-1.5">{paso.title}</h4>
+                        <p className="text-xs text-muted-foreground leading-relaxed">{paso.description}</p>
                       </CardContent>
                     </Card>
                   ))}
@@ -146,17 +150,21 @@ const GuiaMantenimiento = () => {
           </TabsContent>
 
           <TabsContent value="correctivo">
-            <Card className="mb-8 shadow-card">
-              <CardContent className="pt-6">
-                <div className="mb-6">
-                  <h3 className="text-2xl font-bold mb-4">🎯 Objetivo</h3>
-                  <p className="text-muted-foreground text-lg">
+            <Card className="mb-6 shadow-card">
+              <CardContent className="pt-5 pb-5">
+                <div className="mb-5">
+                  <h3 className="text-lg font-bold mb-2 flex items-center gap-2">
+                    🎯 Objetivo
+                  </h3>
+                  <p className="text-muted-foreground text-sm">
                     Solucionar fallas o problemas que impiden el funcionamiento normal del equipo.
                   </p>
                 </div>
-                <div className="mb-8">
-                  <h3 className="text-2xl font-bold mb-4">📍 Se realiza cuando el equipo presenta fallas, como:</h3>
-                  <ul className="list-disc list-inside text-muted-foreground text-lg space-y-2">
+                <div className="mb-5">
+                  <h3 className="text-lg font-bold mb-2 flex items-center gap-2">
+                    📍 Situaciones
+                  </h3>
+                  <ul className="list-disc list-inside text-muted-foreground text-sm space-y-1">
                     <li>No enciende</li>
                     <li>Se reinicia solo</li>
                     <li>Va muy lento</li>
@@ -164,23 +172,23 @@ const GuiaMantenimiento = () => {
                     <li>No reconoce dispositivos</li>
                   </ul>
                 </div>
-                <h3 className="text-2xl font-bold mb-6">🔍 Pasos del Mantenimiento Correctivo</h3>
-                <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                <h3 className="text-lg font-bold mb-4">🔍 Pasos del Mantenimiento</h3>
+                <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
                   {pasosCorrectivo.map((paso, index) => (
                     <Card key={index} className="overflow-hidden card-hover">
-                      <div className="relative h-48">
+                      <div className="relative h-36">
                         <img
                           src={paso.image}
                           alt={paso.title}
-                          className="w-full h-full object-cover"
+                          className="w-full h-full object-contain bg-muted"
                         />
-                        <div className="absolute top-4 left-4 bg-primary text-primary-foreground w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg">
+                        <div className="absolute top-2 left-2 bg-primary text-primary-foreground w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm">
                           {paso.numero}
                         </div>
                       </div>
-                      <CardContent className="p-4">
-                        <h4 className="font-semibold text-lg mb-2">{paso.title}</h4>
-                        <p className="text-sm text-muted-foreground">{paso.description}</p>
+                      <CardContent className="p-3">
+                        <h4 className="font-semibold text-sm mb-1.5">{paso.title}</h4>
+                        <p className="text-xs text-muted-foreground leading-relaxed">{paso.description}</p>
                       </CardContent>
                     </Card>
                   ))}

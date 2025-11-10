@@ -57,32 +57,31 @@ const NormasSeguridad = () => {
   ];
 
   return (
-    <section id="normas-seguridad" className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/30">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <Badge className="mb-4 text-sm">Seguridad</Badge>
-          <h2 className="text-4xl sm:text-5xl font-bold mb-4">
-            🔧 Normas de Seguridad para el Mantenimiento de Computadoras
+    <section id="normas-seguridad" className="py-12 px-4 sm:px-6 lg:px-8 bg-muted/30">
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center mb-10">
+          <Badge className="mb-3 text-xs">🛡️ Seguridad</Badge>
+          <h2 className="text-3xl sm:text-4xl font-bold mb-3">
+            Normas de Seguridad
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-base text-muted-foreground max-w-2xl mx-auto">
             El cumplimiento de las normas de seguridad es fundamental para proteger tanto la integridad 
-            física del técnico como la funcionalidad de los equipos. Un mantenimiento seguro previene 
-            accidentes, daños costosos y garantiza resultados profesionales de calidad.
+            física del técnico como la funcionalidad de los equipos.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-2 gap-4">
           {normas.map((norma, index) => (
             <Card key={index} className="card-hover hover-lift shadow-card">
-              <CardContent className="p-6">
-                <div className="flex items-start gap-3 mb-3">
-                  <div className="p-2 rounded-lg bg-primary/10 shrink-0">
-                    <ShieldAlert className="h-5 w-5 text-primary" />
+              <CardContent className="p-4">
+                <div className="flex items-start gap-2.5 mb-2">
+                  <div className="p-1.5 rounded-lg bg-primary/10 shrink-0">
+                    <ShieldAlert className="h-4 w-4 text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-lg mb-2">{norma.title}</h3>
-                    <p className="text-muted-foreground mb-2">{norma.description}</p>
-                    <p className="text-sm text-primary/80 italic">
+                    <h3 className="font-bold text-base mb-1.5">{norma.title}</h3>
+                    <p className="text-muted-foreground text-xs mb-1.5 leading-relaxed">{norma.description}</p>
+                    <p className="text-xs text-primary/80 italic leading-relaxed">
                       <span className="font-semibold">Por qué:</span> {norma.reason}
                     </p>
                   </div>
